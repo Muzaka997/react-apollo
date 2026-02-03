@@ -1,73 +1,58 @@
-# React + TypeScript + Vite
+# React Apollo GitHub Viewer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React application using Apollo Client to interact with the GitHub GraphQL API. It allows users to view and manage their GitHub repositories, displaying repository details and enabling users to star/unstar repositories.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **View GitHub Repositories**: Displays a list of repositories for the authenticated user.
+- **Star/Unstar Repositories**: Allows users to star or unstar repositories directly from the interface.
 
-## React Compiler
+## Setup and Installation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Clone the repository**:
 
-## Expanding the ESLint configuration
+   ```bash
+   git clone https://github.com/Muzaka997/react-apollo.git
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+2. **Navigate into the project directory**:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+   ```bash
+   cd react-apollo
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+3. **Install dependencies**:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+   ```bash
+   npm install
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+4. **Set up environment variables**:  
+   Create a `.env` file in the root of your project and add your GitHub token:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+   ```plaintext
+   VITE_GITHUB_TOKEN=your_github_token
+   ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+5. **Run the application**:
+   ```bash
+   npm run dev
+   ```
+   The application should now be running on `http://localhost:3000`.
+
+## Scripts
+
+- **Development**: `npm run dev` - Starts the application in development mode using Vite.
+- **Build**: `npm run build` - Builds the application for production.
+- **Lint**: `npm run lint` - Runs ESLint on the project.
+
+## Technologies Used
+
+- **React**: A JavaScript library for building user interfaces.
+- **Apollo Client**: A comprehensive state management library for JavaScript that enables you to manage both local and remote data with GraphQL.
+- **Styled-Components**: Allows you to write plain CSS in your JavaScript to style React components.
+- **Vite**: A build tool that provides a faster and leaner development experience for modern web projects.
+
+## License
+
+This project is licensed under the MIT License.
